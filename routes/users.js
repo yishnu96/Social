@@ -12,4 +12,6 @@ router.post('/create-session',passport.authenticate(
     'local',{failureRedirect : '/users/signIn'}
 ),userController.createSession);
 
+router.get('/signOut', userController.destroySession);
+
 module.exports = router;
