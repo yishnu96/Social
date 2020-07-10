@@ -17,8 +17,8 @@ const sassMiddleware = require('node-sass-middleware');
 
 app.use(express.urlencoded());      //decodes data inputs
 app.use(cookieParser());            //uses for cookies
-
-app.set(express.static('./assets'))
+app.use(express.static(__dirname + '/assets'));
+// app.set(express.static('./assets'))
 app.use(expressLayouts);
 
 // extract style and scripts from sub pages into the layout
