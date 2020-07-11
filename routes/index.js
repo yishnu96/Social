@@ -1,12 +1,15 @@
 const express = require('express');
+
 const router = express.Router();
-const homeController = require('../controllers/home_controller')
+const homeController = require('../controllers/home_controller');
 
-console.log("Routers");
+console.log('router loaded');
 
-router.get('/', homeController.home);               //main home controller in controller folder
-router.use('/users', require('./users'));       //send all /user router to user.js
-router.use('/posts',require('./posts'));
+router.get('/', homeController.home);
+router.use('/users', require('./users'));
+router.use('/posts', require('./posts'));
 router.use('/comments', require('./comments'));
 
+// for any further routes, access from here
+// router.use('/routerName', require('./routerfile));
 module.exports = router;
