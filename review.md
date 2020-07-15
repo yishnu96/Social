@@ -3,4 +3,8 @@
     return res.redirect('users/signIn')
 _________________________________________________________
 
+## Google Authentication
+    Clint ID : 1037759794694-1n2shghoj4j7cbfbfo5044177r32n5te.apps.googleusercontent.com
+    Clint secret : Re9rjvS7hxutzC0wX02khDLQ
 
+    link : https://console.developers.google.com/
