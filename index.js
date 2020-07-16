@@ -9,7 +9,7 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local');
 const passportJWT = require('./config/passport-jwt');
-const passportGoogle = require('./config/passport-googlr-oth')
+const passportGoogle = require('./config/passport-googlr-oth');
 const MongoStore = require('connect-mongo')(session);
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
@@ -28,14 +28,14 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 
 app.use(express.static('./assets'));
+
 //make upload available
 app. use('/uploads',express.static(__dirname + '/uploads'))
 app.use(expressLayouts);
+
 // extract style and scripts from sub pages into the layout
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
-
-
 
 
 // set up the view engine
@@ -45,6 +45,7 @@ app.set('views', './views');
 // mongo store is used to store the session cookie in the db
 app.use(session({
     name: 'codeial',
+    
     // TODO change the secret before deployment in production mode
     secret: 'blahsomething',
     saveUninitialized: false,
