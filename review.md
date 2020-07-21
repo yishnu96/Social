@@ -8,3 +8,9 @@ _________________________________________________________
     Clint secret : Re9rjvS7hxutzC0wX02khDLQ
 
     link : https://console.developers.google.com/
+
+## Send mail
+    - Nodemailer
+    - Config
+    - Mailers
+    - Templates
