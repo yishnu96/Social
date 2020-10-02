@@ -23,7 +23,7 @@ passport.use(new GoogleStrategy({
                 User.create({
                     name : profile.displayName,
                     email : profile.emails[0].value,
-                    passport : crypto.randomBytes(20).toString('hex')
+                    password : crypto.randomBytes(20).toString('hex')
                 }, function(err, user){
                     if(err){
                         console.error("Error in creating user : " , err);

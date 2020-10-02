@@ -89,7 +89,7 @@ module.exports.create = function(req, res){
 
         if (!user){
             User.create(req.body, function(err, user){
-                if(err){req.flash('error' , 'Incorrect User name or password');; return}
+                if(err){req.flash('error' , 'Incorrect User name or password'); return}
 
                 return res.redirect('/users/sign-in');
             })
