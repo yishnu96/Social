@@ -25,6 +25,8 @@ const chatServer = require('http').Server(app);
 const chatSocket = require('./config/chat_socket').chatSockets(chatServer);
 chatServer.listen(5000);
 
+const env = require('./config/environment');
+
 app.use(sassMiddleware({
     src: './assets/scss',
     dest: './assets/css',
@@ -56,7 +58,7 @@ app.use(session({
     name: 'social',
 
     // TODO change the secret before deployment in production mode
-    secret: 'blahsomething',
+    secret: env.session_secret,
     saveUninitialized: false,
     resave: false,
     cookie: {
