@@ -1,20 +1,20 @@
 const mongoose = require('mongoose');
 
 const likeSchema = new mongoose.Schema({
-    user : {
-        type : mongoose.Schema.ObjectId
+    user: {
+        type: mongoose.Schema.ObjectId
     },
-    likeable:{
+    likeable: {
         type: mongoose.Schema.ObjectId,
-        required:true,
-        refPath : 'onModel'
+        required: true,
+        refPath: 'onModel'
     },
-    onModel : {
-        type : String,
-        required:true,
-        enum : ['Post','Comment']
+    onModel: {
+        type: String,
+        required: true,
+        enum: ['Post', 'Comment']
     }
-},{
+}, {
     timestamps: true
 });
 

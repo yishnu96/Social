@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    avatar : {
+    avatar: {
         type: String
     }
 }, {
@@ -25,14 +25,16 @@ const userSchema = new mongoose.Schema({
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, path.join(__dirname,'..',AVATAR_PATH));   //path 
+        cb(null, path.join(__dirname, '..', AVATAR_PATH)); //path 
     },
     filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now());
+        cb(null, file.fieldname + '-' + Date.now());
     }
 })
- 
-userSchema.statics.uploadAvatar = multer({storage:storage}).single('avatar');
+
+userSchema.statics.uploadAvatar = multer({
+    storage: storage
+}).single('avatar');
 userSchema.statics.avatarPath = AVATAR_PATH;
 
 const User = mongoose.model('User', userSchema);
